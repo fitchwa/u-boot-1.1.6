@@ -57,7 +57,7 @@
 #define MTDPARTS_DEFAULT "mtdparts=nandflash0:256k@0(bootloader)," \
 							"128k(device_tree)," \
 							"128k(params)," \
-                            "4m(kernel)," \
+                            "16m(kernel)," \
                             "-(root)"
 
 //#define	CFG_ENV_IS_IN_FLASH	1
