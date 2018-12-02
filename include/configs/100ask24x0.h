@@ -132,13 +132,13 @@
 #include <cmd_confdefs.h>
 
 #define CONFIG_BOOTDELAY	2
-#define CONFIG_BOOTARGS    	"noinitrd root=/dev/mtdblock4 rw init=/linuxrc console=ttySAC0,115200"
+#define CONFIG_BOOTARGS    	"noinitrd root=/dev/nfs nfsroot=192.168.1.104:/home/fitch/nfs_root/root_fs/jz2440_fs ip=192.168.1.115:192.168.1.104:192.168.1.1:255.255.255.0::eth0:off init=/linuxrc console=ttySAC0"
 #define CONFIG_ETHADDR	    08:00:3e:26:0a:5b
 #define CONFIG_NETMASK      255.255.255.0
-#define CONFIG_IPADDR		192.168.1.17
-#define CONFIG_SERVERIP		192.168.1.11
+#define CONFIG_IPADDR		192.168.1.115
+#define CONFIG_SERVERIP		192.168.1.104
 /*#define CONFIG_BOOTFILE	"elinos-lart" */
-#define CONFIG_BOOTCOMMAND	"nand read.jffs2 0x30007FC0 kernel; nand read.jffs2 32000000 device_tree; bootm 0x30007FC0 - 0x32000000"
+#define CONFIG_BOOTCOMMAND	"nand read.jffs2 0x30008000 kernel; nand read.jffs2 32000000 device_tree; bootm 0x30008000 - 0x32000000"
 
 #if (CONFIG_COMMANDS & CFG_CMD_KGDB)
 #define CONFIG_KGDB_BAUDRATE	115200		/* speed to run kgdb serial port */
